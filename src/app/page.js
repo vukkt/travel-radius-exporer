@@ -1,10 +1,13 @@
-import dynamic from 'next/dynamic';
+"use client";
 
-// Dynamically import the TravelRadiusApp to avoid SSR issues with window
-const TravelRadiusApp = dynamic(() => import('../components/TravelRadiusApp'), {
-  ssr: false,
-});
+import dynamic from "next/dynamic";
+
+/* load the big component only in the browser */
+const TravelRadiusExplorer = dynamic(
+	() => import("../components/TravelRadiusExplorer"), // adjust path if needed
+	{ ssr: false } // ← key line
+);
 
 export default function Home() {
-  return <TravelRadiusApp />;
+	return <TravelRadiusExplorer />;
 }

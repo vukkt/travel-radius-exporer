@@ -1,0 +1,26 @@
+/* styles/reset.scss */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	max-width: 100vw;
+	overflow-x: hidden;
+	font-family: system-ui, sans-serif;
+
+	/* pick ONE of the two lines below */
+	overflow-y: scroll; /* —option 1— classic */
+	/* scrollbar-gutter: stable; */ /* —option 2— modern */
+}
+:global(img.leaflet-tile) {
+	width: 256px !important;
+	height: 256px !important;
+	max-width: none !important;
+	max-height: none !important;
+	object-fit: none !important;
+}
